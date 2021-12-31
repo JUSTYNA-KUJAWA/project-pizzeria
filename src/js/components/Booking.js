@@ -68,7 +68,7 @@ class Booking{
         thisBooking.parseData(bookings, eventsCurrent, eventsRepeat);
       });
   }
-  parseData (bookings,eventsCurrent,eventsRepeat){
+  parseData(bookings,eventsCurrent,eventsRepeat){
     const thisBooking = this;
     
     thisBooking.booked = {};
@@ -92,7 +92,7 @@ class Booking{
         }
       }
     }
-    //console.log('thisBooking.booked', thisBooking.booked);
+    console.log('thisBooking.booked', thisBooking.booked);
     thisBooking.updateDOM();
   }
 
@@ -157,7 +157,7 @@ class Booking{
 
     thisBooking.dom.peopleAmount = element.querySelector(select.booking.peopleAmount);
     thisBooking.dom.hoursAmount = element.querySelector(select.booking.hoursAmount);
-    thisBooking.dom.tables = thisBooking.dom.wrapper.querySelectorAll(select.booking.tables);
+    thisBooking.dom.tables = element.querySelectorAll(select.booking.tables);
     thisBooking.dom.floorPlan = element.querySelector(select.booking.floorPlan);
     thisBooking.dom.bookTable = element.querySelector(select.booking.bookTable);
     thisBooking.dom.starters = element.querySelectorAll('.booking-form [name="starter"]');
@@ -191,17 +191,17 @@ class Booking{
       }
     }
     let payload = {};
-    console.log(payload);
-    payload.data = document.querySelector('.flatpickr-input').value;
-    console.log();
+    //console.log(payload);
+    payload.date = document.querySelector('.flatpickr-input').value;
+    //console.log();
     payload.hour = thisBooking.hourPicker.value;
     payload.table = tableId;
     payload.duration = thisBooking.dom.wrapper.querySelector('.hours-amount .amount').value;
     payload.ppl = thisBooking.dom.wrapper.querySelector('.people-amount .amount').value;
     payload.starters= [];
     payload.phone = thisBooking.dom.wrapper.querySelector('input[type="tel"]').value;
-    payload.address = thisBooking.dom.wrapper.querySelector('input[name="address"]'.value);
-    console.log(payload);
+    payload.address = thisBooking.dom.wrapper.querySelector('input[name="address"]').value;
+    //console.log(payload);
     for(let starter of thisBooking.dom.starters){
       if(starter.checked){
         payload.starters.push(starter.value);
@@ -209,7 +209,7 @@ class Booking{
     }
 
     thisBooking.send(url, payload);
-    thisBooking.makeBooked(payload.data, payload.hour, payload.duration, payload.table);
+    thisBooking.makeBooked(payload.date, payload.hour, payload.duration, payload.table);
   }
   send(url, payload){
     const options = {
