@@ -4,7 +4,7 @@ import BaseWidget from './BaseWidget.js';
 class AmountWidget extends BaseWidget {
   constructor(element){
     super(element,settings.amountWidget.defaultValue);
-    const thisWidget  = this;
+    const thisWidget = this;
 
     thisWidget.getElements(element);
     //thisWidget.value = settings.amountWidget.defaultValue;
@@ -42,7 +42,7 @@ class AmountWidget extends BaseWidget {
     const thisWidget = this;
 
     thisWidget.dom.input.addEventListener('change', function(){
-      event.preventDefault();
+      //event.preventDefault();
       //thisWidget.setValue(thisWidget.dom.input.value);
       thisWidget.value = thisWidget.input.value;
     });

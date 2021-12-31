@@ -1,5 +1,5 @@
   
-import {settings, select, classNames, templates} from './settings.js';
+import {settings, select, classNames, /*templates*/} from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
@@ -106,10 +106,10 @@ const app = {
   init: function(){
     const thisApp = this;
     console.log('*** App starting ***');
-    console.log('thisApp:', thisApp);
+    /*console.log('thisApp:', thisApp);
     console.log('classNames:', classNames);
     console.log('settings:', settings);
-    console.log('templates:', templates);
+    console.log('templates:', templates);*/
 
     thisApp.initPages();
     thisApp.initData();
