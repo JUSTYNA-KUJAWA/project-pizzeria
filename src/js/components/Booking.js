@@ -225,8 +225,7 @@ class Booking{
       }
     }
   }
-
-
+  
   removeTableSelection() {
     const thisBooking = this;
 

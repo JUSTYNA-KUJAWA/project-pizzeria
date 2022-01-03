@@ -48,6 +48,8 @@
     },
     "dependencies": {
         "flatpickr": "^4.6.9",
+        "flickity": "^2.2.2",
+        "flickity-hash": "^1.0.3",
         "json-server": "^0.17.0"
     }
 }
