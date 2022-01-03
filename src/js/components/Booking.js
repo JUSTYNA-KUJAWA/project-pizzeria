@@ -216,7 +216,7 @@ class Booking{
     const okSelected = element.classList.contains(classNames.booking.tableSelected);
     
     if (okTable && !okBooked) {
-      thisBooking.removeTableSelection();
+      //thisBooking.removeTableSelection();
       if (!okSelected) {
         element.classList.toggle(classNames.booking.tableSelected);
         thisBooking.tableSelected = parseInt(
@@ -279,7 +279,6 @@ class Booking{
     fetch(url, options);
     console.log(url, options);
   }
-
 }
 
 export default Booking;
